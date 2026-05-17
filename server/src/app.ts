@@ -9,6 +9,11 @@ import { errorHandler, notFound } from './middleware/errorHandler';
 
 const app = express();
 
+app.use(cors({
+  origin: process.env.CLIENT_URL,
+  credentials: true
+}));
+
 const allowedOrigins = [
   env.clientUrl,
   'http://localhost:5173',
